@@ -28,6 +28,9 @@ A lightweight cross-project Asset &amp; Script manager for Unity. Store and tran
 2. Drag and drop the `.unitypackage` into your Unity project.
 3. Open the tool via Unity top menu: **`Tools -> Global Asset Hub`**.
 
+<img width="838" height="860" alt="image" src="https://github.com/user-attachments/assets/40325c00-3889-4747-ad1e-865bc3e62e5d" />
+
+
 ---
 
 ## 💡 How to Use
