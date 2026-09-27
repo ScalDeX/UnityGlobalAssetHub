@@ -54,7 +54,7 @@ This project is open-source under the [MIT License](LICENSE). Feel free to use i
 
 If you find this plugin useful and want to support the development, you can buy me a coffee or send a donation:
 
-- 💳 **Credit Card / SBP (RUB):** [Вставь сюда ссылку на свой сервис чаевых]
+- 💳 **Credit Card / SBP (RUB):** (https://pay.cloudtips.ru/p/ca6fa18f)
 - 💎 **TON (Toncoin):** `UQBM-rSwiz_Kxa-XtEPgrepOprIfzaf04mL3zBVcwVYoD69l`
 - 🪙 **USDT (TRC-20):** `0xF4C4Da00352be40E2074b00D074F1dAa20E9Ddb7`
 
