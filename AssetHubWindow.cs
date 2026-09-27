@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public class AssetHubWindow : EditorWindow
 {
-    public enum Language { English, Russian, Japanese }
+     public enum Language { English, Russian, Japanese }
 
     private string searchFilter = "";
     private Vector2 scrollPosition;
-    private static string GlobalHubPath;
+    private string GlobalHubPath;
 
     private HashSet<string> expandedFolders = new HashSet<string>();
     private HashSet<string> selectedItems = new HashSet<string>();
@@ -41,9 +41,16 @@ public class AssetHubWindow : EditorWindow
     {
         GUILayout.Space(10);
 
-        // ВЕРХНЯЯ ПАНЕЛЬ С ВЫБОРОМ ЯЗЫКА
+        // ВЕРХНЯЯ ПАНЕЛЬ С КНОПКОЙ ПОДДЕРЖКИ И ВЫБОРОМ ЯЗЫКА
         GUILayout.BeginHorizontal();
+
+        if (GUILayout.Button("❤️ " + L("Support"), GUILayout.Width(110)))
+        {
+            Application.OpenURL("https://github.com/ScalDeX/UnityGlobalAssetHub");
+        }
+
         GUILayout.FlexibleSpace();
+
         GUILayout.Label("🌐", GUILayout.Width(20));
         Language newLang = (Language)EditorGUILayout.EnumPopup(currentLanguage, GUILayout.Width(90));
         if (newLang != currentLanguage)
@@ -178,7 +185,7 @@ public class AssetHubWindow : EditorWindow
         if (GUILayout.Button("X", GUILayout.Width(25)))
         {
             string deleteMsg = string.Format(L("DeleteMsg"), itemName);
-            
+
             if (EditorUtility.DisplayDialog(L("DeleteTitle"), deleteMsg, L("Yes"), L("Cancel")))
             {
                 selectedItems.Remove(itemPath);
@@ -290,6 +297,7 @@ public class AssetHubWindow : EditorWindow
         {
             Language.Russian => key switch
             {
+                "Support" => "Поддержать",
                 "Search" => "Поиск:",
                 "DropArea" => "Перетащите сюда скрипты или папки из окна Project",
                 "ImportSelected" => "Импортировать выбранное",
@@ -306,6 +314,7 @@ public class AssetHubWindow : EditorWindow
             },
             Language.Japanese => key switch
             {
+                "Support" => "支援する",
                 "Search" => "検索:",
                 "DropArea" => "Projectからスクリプトやフォルダをドロップ",
                 "ImportSelected" => "選択した項目をインポート",
@@ -322,6 +331,7 @@ public class AssetHubWindow : EditorWindow
             },
             _ => key switch // English (Default)
             {
+                "Support" => "Support",
                 "Search" => "Search:",
                 "DropArea" => "Drag & drop scripts or folders from Project window here",
                 "ImportSelected" => "Import Selected",
